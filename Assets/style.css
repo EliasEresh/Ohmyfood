@@ -1,0 +1,479 @@
+* {
+    box-sizing: border-box;
+  }
+
+body {
+    font-family: Roboto,sans-serif;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/**Loader**/
+
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: loading 3s linear;
+    animation-fill-mode: forwards;
+}
+
+.loading {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 40px;
+    width: 200px;
+    height: 30px;
+    border: solid 4px #99E2D0;
+    overflow: hidden;
+}
+
+.loading::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(to right, #9356DC -5.2%, #9356DC 0%, #FF79DA 0%, #FF79DA 110.74%);
+    animation: loading-bar 3s linear forwards;
+    animation-fill-mode: forwards;
+}
+
+@keyframes loading-bar {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes loading {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        display: none;
+        visibility: hidden;
+    }
+}
+
+/**Logo**/
+
+.header {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0px 0px 5px 0px rgb(0 0 0 / 25%);
+    height: 80px;
+    align-items: center;
+}
+
+.header-logo {
+    font-family: Shrikhand,"cursive";
+    margin: 0;
+    color: black;
+}
+
+/**Emplacement**/
+
+.place {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #EAEAEA;
+    color: #353535;
+}
+
+.place-icon {
+    margin-right: 13px;
+}
+
+.place-name {
+    font-weight: 500;
+}
+
+/**Section Explorer**/
+
+.explore {
+    background-color: #fafafa;
+}
+
+.explore-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 50px 0;
+}
+
+.explore-title {
+    font-weight: 700;
+    max-width: 250px;
+    margin: 0;
+}
+
+.explore-text {
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.explore-button {
+    border: 0;
+    background: linear-gradient(200.64deg, #9356DC -5.2%, #FF79DA 110.74%);
+    border-radius: 25px;
+    color: white;
+    box-shadow: 0px 0px 10px 0px rgb(0 0 0 / 30%);
+    padding: 16px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    font: inherit;
+    cursor: pointer;
+    opacity: 1;
+    transition: 300ms;
+}
+
+.explore-button:hover {
+    box-shadow: 0px 0px 10px 0px rgb(0 0 0 / 60%);
+    opacity: 0.8;
+    transition: 300ms;
+}
+
+/**Section Fonctionnement**/
+
+.fonction {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 5px;
+}
+
+.fonction-container {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+}
+
+.fonction-steps {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.fonction-step {
+    display: flex;
+    align-items: center;
+    background: #F6F6F6;
+    box-shadow: 0px 4px 15px rgba(0 0 0 / 15%);
+    padding: 12px 0px;
+    border-radius: 20px;
+    margin-bottom: 25px;
+    width: 95%;
+    margin-left: 5px;
+    position: relative;
+    cursor: pointer;
+    transition: 300ms;
+}
+
+.fonction-step:hover {
+    background: rgb(248, 215, 249);
+    box-shadow: 0px 4px 15px rgba(0 0 0 / 30%);
+    opacity: 0.8;
+    transition: 300ms;
+}
+
+.fonction-step:hover > .fonction-icon {
+    color: #9356DC;
+    transition: 300ms;
+}
+
+.fonction-number {
+    color: white;
+    background-color: #9356DC;
+    border-radius: 500px;
+    padding: 3px 8px 3px 8px;
+    position: absolute;
+    left: -13px;
+}
+
+.fonction-icon {
+    color: #7E7E7E;
+    margin: 0 25px 0 35px;
+    font-size: 18px;
+    transition: 300ms;
+}
+
+.fonction-text {
+    font-weight: 500;
+}
+
+/**Section Restaurants**/
+
+.restaurants {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: #F6F6F6;
+    padding: 20px 20px 50px 20px;
+}
+
+.restaurant-container {
+    width: 100%;
+}
+
+.link-restaurant {
+    width: 100%;
+    height: 22%;
+    cursor: pointer;
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 1200px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0px 4px 15px rgba(0 0 0 / 10%);
+}
+
+.card-image {
+    width: 100%;
+    height: 190px;
+}
+
+.new {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: #99E2D0;
+    width: 80px;
+    height: 29px;
+    top: 20px;
+    right: 20px;
+    border-radius: 2px;
+}
+
+.new p {
+    padding: 10px 20px;
+    color: #008766;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px 20px 0 0;
+}
+
+.card-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    background-color: white;
+    border-radius: 0 0 20px 20px;
+}
+
+.card-text {
+    color: black;
+    margin-left: 13px;
+}
+
+.card-name {
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 2px;
+    margin-bottom: 3px;
+}
+
+.card-town {
+    font-size: 17px;
+    font-weight: 300;
+    margin-top: 3px;
+    margin-bottom: 4px;
+}
+
+svg {
+    width: 22px;
+    height: 21px;
+}
+
+.heart {
+    margin-right: 24px;
+    margin-bottom: 15px;
+    background-color: white;
+    background-size: cover;
+    transition: fill 0.5s;
+    transition: 500ms;
+}
+
+.heart-icon {
+    background: -webkit-linear-gradient(top, #9356DC, #FF79DA);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   font-size: 23px;
+}
+
+.heart-icon-empty {
+    position: absolute;
+    transition: 500ms;
+}
+
+.heart-icon-full {
+    transition: 500ms;
+    opacity: 0;
+}
+
+.heart:hover {
+    opacity: 0.8;
+    transition: 500ms;
+}
+
+.heart:hover .heart-icon-empty {
+    opacity: 0;
+    transition: opacity 0.5s;
+    visibility: hidden;
+    transition: visibility 0.5s, transform 500ms;
+}
+
+.heart:hover .heart-icon-full {
+    transition: 500ms;
+    opacity: 1;
+}
+
+/**Footer**/
+
+.footer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #353535;
+}
+
+.footer-content {
+    padding-left: 30px;
+    padding-bottom: 35px;
+}
+
+.footer-logo {
+    font-family: Shrikhand,"cursive";
+    font-size: 18px;
+    font-weight: 400;
+    color: white;
+    padding: 25px 0;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 240px;
+    padding-top: 10px;
+}
+
+.footer-link {
+    display: inline-flex;
+    align-items: center;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.footer-link-title {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.footer-icon {
+    margin-right: 7px;
+}
+
+/**Media Queries**/
+
+@media screen and (min-width: 768px) {
+
+    .explore-title {
+        max-width: none;
+    }
+
+    .fonction-container {
+        width: 82%;
+    }
+
+    .fonction-steps {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .fonction-step {
+        width: 30%;
+    }
+
+    .restaurants {
+        align-items: center;
+    }
+
+    .cards {
+        flex-direction: row;
+        height: auto;
+    }
+
+    .link-restaurant {
+        width: 22%;
+    }
+
+    .footer {
+        justify-content: flex-end;
+    }
+
+    .footer-content {
+        display: flex;
+        flex-direction: row-reverse;
+        padding-right: 100px;
+        padding-top: 20px;
+        padding-bottom: 5px;
+        width: 100%;
+    }
+
+    .footer-logo {
+        padding: 25px 0px 25px 70px;
+    }
+
+    .footer-links {
+        flex-direction: row;
+        padding: 25px 0px;
+        height: 0px;
+        width: 58%;
+    }
+}
