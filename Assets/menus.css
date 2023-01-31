@@ -86,6 +86,47 @@ svg {
     height: 21px;
 }
 
+.heart {
+    background-size: cover;
+    transition: fill 0.5s;
+    transition: 500ms;
+    cursor: pointer;
+}
+
+.heart-icon {
+    background: -webkit-linear-gradient(top, #9356DC, #FF79DA);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   font-size: 23px;
+}
+
+.heart-icon-empty {
+    position: absolute;
+    transition: 500ms;
+}
+
+.heart-icon-full {
+    transition: 500ms;
+    opacity: 0;
+}
+
+.heart:hover {
+    opacity: 0.8;
+    transition: 500ms;
+}
+
+.heart:hover .heart-icon-empty {
+    opacity: 0;
+    transition: opacity 0.5s;
+    visibility: hidden;
+    transition: visibility 0.5s, transform 500ms;
+}
+
+.heart:hover .heart-icon-full {
+    transition: 500ms;
+    opacity: 1;
+}
+
 .menu-meals {
     display: flex;
     flex-direction: column;
@@ -137,7 +178,59 @@ h3 {
     box-shadow: 5px 5px 15px 5px rgb(0 0 0/10%);
     border-radius: 15px;
     cursor: pointer;
+    animation: appear 0.5s forwards;
+    opacity: 0;
+    position: relative;
 }
+
+.meal-1 {
+    animation-delay: 0.2s;
+}
+
+.meal-2 {
+    animation-delay: 0.4s;
+}
+
+.meal-3 {
+    animation-delay: 0.6s;
+}
+
+.meal-4 {
+    animation-delay: 0.2s;
+}
+
+.meal-5 {
+    animation-delay: 0.4s;
+}
+
+.meal-6 {
+    animation-delay: 0.6s;
+}
+
+.meal-7 {
+    animation-delay: 0.2s;
+}
+
+.meal-8 {
+    animation-delay: 0.4s;
+}
+
+.meal-9 {
+    animation-delay: 0.6s;
+}
+
+.meal-10 {
+    animation-delay: 0.8s;
+}
+
+@keyframes appear {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 
 .meal-text {
     width: 100%;
@@ -145,6 +238,36 @@ h3 {
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
+}
+
+.meal-icon {
+    display: none;
+    position: absolute;
+    background-color: #99E2D0;
+    border-radius: 0 15px 15px 0;
+    right: 0px;
+    top: 0px;
+    padding: 0 13px;
+    height: 100%;
+}
+
+.meal-icon-shape {
+    font-size: 30px;
+    color: white;
+}
+
+.meal:hover .meal-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: slide-left 0.5s ease;
+    transform-origin: right;
+}
+
+@keyframes slide-left {
+    0% {
+        transform: scaleX(0);
+    }
 }
 
 .text {
@@ -179,7 +302,12 @@ p {
 .price {
     font-size: 15px;
     font-weight: 700;
-    padding-top: 25px;
+    padding-top: 5px;
+}
+
+.meal:hover .price {
+    transition: 0.5s ease;
+    padding-right: 55px;
 }
 
 .menu-command-button {
