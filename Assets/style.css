@@ -333,8 +333,6 @@ svg {
     margin-bottom: 15px;
     background-color: white;
     background-size: cover;
-    transition: fill 0.5s;
-    transition: 500ms;
 }
 
 .heart-icon {
@@ -346,28 +344,21 @@ svg {
 
 .heart-icon-empty {
     position: absolute;
-    transition: 500ms;
+    transition: 1000ms;
 }
 
 .heart-icon-full {
-    transition: 500ms;
     opacity: 0;
-}
-
-.heart:hover {
-    opacity: 0.8;
-    transition: 500ms;
+    transition: 1000ms;
 }
 
 .heart:hover .heart-icon-empty {
     opacity: 0;
-    transition: opacity 0.5s;
-    visibility: hidden;
-    transition: visibility 0.5s, transform 500ms;
+    transition: opacity 500ms;
 }
 
 .heart:hover .heart-icon-full {
-    transition: 500ms;
+    transition: 1000ms;
     opacity: 1;
 }
 
