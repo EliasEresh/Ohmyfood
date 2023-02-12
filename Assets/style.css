@@ -388,7 +388,7 @@ svg {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 240px;
+    height: 200px;
     padding-top: 10px;
 }
 
